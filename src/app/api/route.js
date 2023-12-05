@@ -1,6 +1,6 @@
 import * as cheerio  from "cheerio";
 export async function GET() {
-    const res = await fetch('https://adventjs.dev/en#retos/...')
+    const res = await fetch('https://adventjs.dev/en#retos/...', { next: { revalidate: 43200 } })
     const html = await res.text()
     const $ = cheerio.load(html);
         const retos = []
