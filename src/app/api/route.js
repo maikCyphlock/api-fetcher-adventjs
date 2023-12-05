@@ -4,7 +4,7 @@ export async function GET() {
     const html = await res.text()
     const $ = cheerio.load(html);
         const retos = []
-       $('a[href^="/challenges/2023"]').each((i, element) => {
+       $('a[href^="/es/challenges/2023"]').each((i, element) => {
         const text = $(element).text();
             retos[i] = {
                 day: text
